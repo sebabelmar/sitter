@@ -4,6 +4,9 @@
 
 <%= render 'timeslot_form' %>
 
+<p>In case no one have submited, Message all your family</p>
+<%= button_to "EMERGENCY", users_path%>
+
 <%if @users%>
   <table style="width:100%">
   <%@users.each do |user|%>
