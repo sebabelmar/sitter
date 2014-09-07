@@ -12,4 +12,17 @@ class TwilioController < ApplicationController
       :body => message
     )
   end
+
+  def emergency
+    @client.account.messages.create(
+      :from => '+14154032561',
+      :to => '+19282740117',
+      :body => "Hey I need your help."
+    )
+    @client.account.messages.create(
+      :from => '+14154032561',
+      :to => '+14156406720',
+      :body => "Hey I need your help."
+    )
+  end
 end
