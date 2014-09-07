@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :friends
+    resources :timeslots
   end
 
   get "sign_in" => 'sessions#new'
