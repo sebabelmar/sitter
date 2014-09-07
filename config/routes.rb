@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   post "users/search" => "users#search"
   post "users/offer" => "users#offer"
-
+  post "users/send_message" => "users#send_message_to_friend"
 
   get "sign_in" => 'sessions#new'
   post "sessions/create"

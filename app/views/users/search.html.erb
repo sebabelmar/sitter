@@ -12,7 +12,8 @@
   <%@users.each do |user|%>
   <tr>
   <th><%= user.family_name%></th>
-  <th><%= button_to "message", users_path%></th>
+  <!-- #PUT DE URL -->
+  <th><%= button_to "message", users_send_message_path(friend_id: user.id)%></th>
   </tr>
   <%end%>
   </table>

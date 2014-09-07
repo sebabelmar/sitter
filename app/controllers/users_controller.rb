@@ -52,9 +52,12 @@ class UsersController < ApplicationController
 
   def send_message_to_friend
     user = current_user
-    friend = user.friends.find(params[:id])
-    Twilio::send_message_to(friend)
+    friend = User.find(params[:friend_id])
+    message = "Your friend #{friend.family_name} booked your slot. You are awesome"
+
     flash[:notice] = "Your message to #{friend.first_name} #{friend.last_name} has been sent!"
+    texting = TwilioController.new
+    texting.send_message_to(friend.phone_number_one, message)
     redirect_to users_path
   end
 
