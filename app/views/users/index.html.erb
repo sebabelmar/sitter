@@ -1,0 +1,5 @@
+<h1>We are at user#index </h1>
+
+<% if current_user%>
+  <%= link_to "sign_out", sessions_destroy_path, :method => :delete %>
+<% end %>
