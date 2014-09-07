@@ -29,7 +29,22 @@ class UsersController < ApplicationController
   end
 
   def search
-    @user = current_user
+    timeslot = Timeslot.new
+    users = []
+
+    if params[:start_time] != nil
+    beg_time = Chronic.parse(params[:start_time]).to_i
+
+      User.all.each do |user|
+        user.timeslots.each do |timeslot|
+           if (timeslot.start_time..timeslot.end_time).include?(beg_time)
+            users << user
+          end
+        end
+      end
+    end
+
+    @users = users
   end
 
   def offer

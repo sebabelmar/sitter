@@ -27,5 +27,15 @@ User.all.each do |user|
   end
 end
 
+User.all.each do |user|
+    day =%w{monday tuesday wednesday thurdays friday saturday}
+    timeslot = Timeslot.create(
+      start_time: Chronic.parse("next #{day.sample} at #{(1..8).to_a.sample}pm").to_i,
+      duration: (1..4).to_a.sample,
+      availability: (1..3).to_a.sample,
+      kind: "Sitter"
+      )
+    user.timeslots << timeslot
+end
 
 
