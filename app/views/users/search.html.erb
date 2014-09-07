@@ -1,3 +1,16 @@
 <h1>I need a sitter</h1>
 
 <p>add calendar to indicate when you need friend's to be available</p>
+
+<%= render 'timeslot_form' %>
+
+<%if @users%>
+  <table style="width:100%">
+  <%@users.each do |user|%>
+  <tr>
+  <th><%= user.family_name%></th>
+  <th><%= button_to "message", users_path%></th>
+  </tr>
+  <%end%>
+  </table>
+<%end%>

@@ -1,14 +1,28 @@
-<h1>Welcome back <%= @user.family_name %>!</h1>
+<div class="top-border"></div>
+  <div>
+    <% if current_user %>
+      <%= button_to "LOG OUT", sessions_destroy_path, :method => :delete, :class => "log-out" %>
+    <% end %>
+  </div>
 
-<div>
-<% if current_user %>
-  <%= link_to "sign_out", sessions_destroy_path, :method => :delete %>
-<% end %>
-</div>
+  <div class="wrap">
+
+    <header class="full-head">
+      <h1>The Sitter Club</h1>
+    </header>
+
+    <div class="slider-txt">
+        <%= image_tag "head-shot.png", :class => "head-shot" %>
+        <p class="page-title">Welcome back <%= @user.family_name %></p>
+    </div>
 
 
-<%= link_to "I need a Sitter", users_search_path, :method => :search  %>
-<%= link_to "I am free to Sit",  "/users/#{current_user.id}/timeslots/new" %>
+    <div class="sign-up-login">
+      <%= link_to "I need a Sitter", users_search_path, :method => :search, :class =>"submit" %>
+      <p>-OR-</p>
+      <%= link_to "I am available to Sit",  "/users/#{current_user.id}/timeslots/new", :class => "submit" %>
+    </div>
+
 
 <div>
 <% @active_friends.each do |friend| %>

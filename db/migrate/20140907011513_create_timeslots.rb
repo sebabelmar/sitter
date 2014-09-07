@@ -9,7 +9,7 @@ class CreateTimeslots < ActiveRecord::Migration
 
       t.integer :availability, default: 1
 
-      t.string :kind
+      t.string :kind, default: "Sitter"
 
       t.timestamps
     end

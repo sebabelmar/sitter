@@ -44,4 +44,4 @@ gem 'debugger', group: [:development, :test]
 
 gem 'faker'
 
-gem 'chronic'
+

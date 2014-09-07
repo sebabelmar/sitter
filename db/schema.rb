@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20140907011513) do
     t.integer  "end_time"
     t.integer  "duration"
     t.integer  "availability", default: 1
-    t.string   "kind"
+    t.string   "kind",         default: "Sitter"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,7 +1,23 @@
-<h1>WE ARE IN THE HOME</h1>
+<div class="top-border"></div>
+  <div class="wrap">
+    <header>
+      <h1>The Sitter Club</h1>
+    </header>
+
+     <div class="slider-txt">
+        <p class="page-title">Find babysitters you already know and trust.</p>
+    </div>
+
+    <%= image_tag "family-1.jpg", :class => "hero-image"  %>
+
+    <div class="sign-up-login">
+      <p>Family &amp; Friends</p>
+      <%= link_to "LOG IN", sign_in_path, :class => "submit" %>
+      <%= link_to "SIGN UP", new_user_path, :class => "submit" %>
+    </div>
+
 <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, class: "flash #{name}" %>
 <% end %>
 
-<%= link_to "sign_in", sign_in_path %>
-<%= link_to "sign_up", new_user_path %>
+</div>

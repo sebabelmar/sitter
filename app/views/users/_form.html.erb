@@ -1,19 +1,13 @@
 <%= form_for @user do |f| %>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.text_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation %><br>
-    <%= f.text_field :password_confirmation %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+    <%= f.text_field :email, placeholder: "Email Address", :class => "field" %>
+
+    <%= f.text_field :password, placeholder: "Password", :class => "field"%>
+
+    <%= f.text_field :password_confirmation, placeholder: "Confirm Password", :class => "field" %>
+
+    <%= f.submit "SIGN UP", :class => "submit"%>
+
 <% end %>
 
 <% if @user.errors.any? %>

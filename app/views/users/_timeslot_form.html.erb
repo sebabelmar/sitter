@@ -1,0 +1,11 @@
+<%= form_tag(:action => 'search')   do  %>
+
+    <%= datetime_local_field_tag :start_time, placeholder: "start time", :class => "field" %>
+
+
+    <%= number_field_tag :duration, placeholder: "Duration", :class => "field"  %>
+
+    <%= number_field_tag :availability, placeholder: "#children", :class => "field"  %>
+
+    <%= submit_tag "Submit", :class => "submit"  %>
+<% end %>
