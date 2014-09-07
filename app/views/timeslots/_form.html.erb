@@ -1,26 +1,13 @@
 <%= form_for ([:user, @timeslot]) do |f| %>
-  <div class="field">
-    <%= f.label :start_time %><br>
-    <%= f.datetime_local_field :start_time %>
-  </div>
-  <div class="field">
-    <%= f.label :duration_in_hours %><br>
-    <%= f.number_field :duration %>
-  </div>
-  <div class="field">
-    <%= f.label :Number_of_kids_? %><br>
-    <%= f.number_field :availability %>
-  </div>
- <div class="field">
-    <%= f.label :kind, "Sitting", :value => "Sitting"  %>
-    <%= f.radio_button :kind, "Sitting"%>
-    <%= f.label :kind, "Sitter", :value => "Sitter" %>
-    <%= f.radio_button :kind, "Sitter", :checked => true %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= f.datetime_local_field :start_time, placeholder: "Start Time",:class => "field" %>
+
+    <%= f.number_field :duration, placeholder: "Duration", :class => "field"%>
+
+    <%= f.number_field :availability, placeholder: "#Children I can sit", :class => "field" %>
+
+    <%= f.submit "ADD", :class => "submit" %>
+
 <% end %>
 
 <% if @timeslot.errors.any? %>
