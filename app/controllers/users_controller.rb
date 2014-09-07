@@ -40,6 +40,8 @@ class UsersController < ApplicationController
     user = current_user
     friend = user.friends.find(params[:id])
     Twilio::send_message_to(friend)
+    flash[:notice] = "Your message to #{friend.first_name} #{friend.last_name} has been sent!"
+    redirect_to users_path
   end
 
   def home
