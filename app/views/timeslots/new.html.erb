@@ -1,0 +1,24 @@
+<h1> TimeSlots:</h1>
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, class: "flash #{name}" %>
+<% end %>
+
+<%= render 'form' %>
+
+<h2>Your kind timeslots</h2>
+<table style="width:100%">
+  <tr>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Duration</th>
+    <th>Availability</th>
+  </tr>
+<% @timeslots.each do |timeslot| %>
+  <tr>
+    <td><%= Time.at(timeslot.start_time).to_s.split.first %></td>
+    <td><%= Time.at(timeslot.start_time).to_s.split[1] %></td>
+    <td><%= timeslot.duration %></td>
+    <td><%= timeslot.availability %></td>
+  </tr>
+<% end %>
+
