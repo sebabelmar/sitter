@@ -1,6 +1,12 @@
-<h1> Registration:</h1>
-<% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, class: "flash #{name}" %>
-<% end %>
+<div class="top-border"></div>
+  <div class="wrap">
+    <header>
+      <h1>The Sitter Club</h1>
+    </header>
 
-<%= render 'form' %>
+    <%= render 'form' %>
+
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: "flash #{name}" %>
+    <% end %>
+  </div>
