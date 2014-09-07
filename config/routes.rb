@@ -4,6 +4,10 @@ Rails.application.routes.draw do
     resources :friends
   end
 
+  post "users/search" => "users#search"
+  post "users/offer" => "users#offer"
+
+
   get "sign_in" => 'sessions#new'
   post "sessions/create"
   delete "sessions/destroy"
