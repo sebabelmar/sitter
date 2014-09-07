@@ -7,7 +7,7 @@
     </header>
 
     <div class="slider-txt">
-        <%= image_tag "head-shot.png", :class => "head-shot" %>
+        <%= image_tag "seba.png", :class => "head-shot" %>
         <p class="page-title">Welcome back <%= @user.family_name %></p>
     </div>
 
@@ -16,9 +16,9 @@
     <% end %>
 
     <div class="sign-up-login">
-      <%= link_to "I need a Sitter", users_search_path, :method => :search, :class =>"submit" %>
+      <%= link_to "I need a Hand", users_search_path, :method => :search, :class =>"submit" %>
       <p>-OR-</p>
-      <%= link_to "I am available to Sit",  "/users/#{current_user.id}/timeslots/new", :class => "submit" %>
+      <%= link_to "I'm available to Help",  "/users/#{current_user.id}/timeslots/new", :class => "submit" %>
     </div>
 
 
