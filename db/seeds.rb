@@ -27,3 +27,11 @@ User.all.each do |user|
   end
 end
 
+# User.all.each do |user|
+#   (1..5).to_a.sample.times do
+#     today = Chronic.
+
+
+#   end
+# end
+

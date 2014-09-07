@@ -24,8 +24,10 @@ ActiveRecord::Schema.define(version: 20140907011513) do
   create_table "timeslots", force: true do |t|
     t.integer  "user_id"
     t.integer  "start_time"
+    t.integer  "end_time"
     t.integer  "duration"
     t.integer  "availability", default: 1
+    t.string   "kind"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
