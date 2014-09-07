@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
+
   def index
-    puts "WE ARE HERE"
+    @user = current_user
+    #user timeslots TBD
+    @active_friends = @user.friends.map { |friend| friend.family_name if friend.timeslots.count > 0 }.compact
   end
 
   def new
@@ -23,6 +26,14 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     flash[:notice] = "#{@user.first_name} #{@user.last_name} has been deleted."
     @user.destroy
+  end
+
+  def search
+    @user = current_user
+  end
+
+  def offer
+    @user = current_user
   end
 
   def home
