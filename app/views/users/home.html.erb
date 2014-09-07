@@ -1,0 +1,7 @@
+<h1>WE ARE IN THE HOME</h1>
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, class: "flash #{name}" %>
+<% end %>
+
+<%= link_to "sign_in", sign_in_path %>
+<%= link_to "sign_up", new_user_path %>
