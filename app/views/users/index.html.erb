@@ -1,5 +1,19 @@
-<h1>We are at user#index </h1>
+<h1>Welcome back <%= @user.family_name %>!</h1>
 
-<% if current_user%>
+<div>
+<% if current_user %>
   <%= link_to "sign_out", sessions_destroy_path, :method => :delete %>
 <% end %>
+</div>
+
+
+<%= link_to "I need a Sitter", users_search_path, :method => :search  %>
+<%= link_to "I am free to Sit", users_offer_path, :method => :offer %>
+
+<div>
+<% @active_friends.each do |friend| %>
+  <p>Available friends in your network:</p>
+  <%= friend.family_name %>
+<% end  %>
+</div>
+
