@@ -36,6 +36,12 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+  def send_message_to_friend
+    user = current_user
+    friend = user.friends.find(params[:id])
+    Twilio::send_message_to(friend)
+  end
+
   def home
   end
 
