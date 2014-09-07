@@ -34,7 +34,6 @@ class UsersController < ApplicationController
 
     if params[:start_time] != nil
     beg_time = Chronic.parse(params[:start_time]).to_i
-
       User.all.each do |user|
         user.timeslots.each do |timeslot|
            if (timeslot.start_time..timeslot.end_time).include?(beg_time)
