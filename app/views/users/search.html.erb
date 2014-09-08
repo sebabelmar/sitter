@@ -1,11 +1,15 @@
-<h1>I need a sitter</h1>
+<h1>I need a Family</h1>
 
 <p>add calendar to indicate when you need friend's to be available</p>
+
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, class: "flash #{name}" %>
+<% end %>
 
 <%= render 'timeslot_form' %>
 
 <p>In case no one have submited, Message all your family</p>
-<%= button_to "EMERGENCY", users_path%>
+<%= button_to "EMERGENCY", users_emergency_path%>
 
 <%if @users%>
   <table style="width:100%">

@@ -59,6 +59,14 @@ class UsersController < ApplicationController
     texting = TwilioController.new
     texting.send_message_to(friend.phone_number_one, message)
     redirect_to users_path
+    texting.send_message_to(friend.phone_number_one, message)
+  end
+
+  def send_emergency
+    texting = TwilioController.new
+    texting.emergency
+    flash[:notice] = "Your emergency CALL was sent! RELAX!"
+    redirect_to users_path
   end
 
   def home

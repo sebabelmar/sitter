@@ -84,7 +84,12 @@ table {
       color: #4D4D4D;
       line-height: 58px;
     }
-    .head-shot{margin-bottom:-12px;}
+    .head-shot{
+    margin-bottom:-12px;
+    height:180px;
+    border-radius:50%;
+    border:3px solid white;
+    }
 
 
     .slider-txt{
