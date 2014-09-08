@@ -1,11 +1,16 @@
 <%= form_for ([:user, @timeslot]) do |f| %>
-
+    <div>
+    <%= label_tag 'Date & time'%><br>
     <%= f.datetime_local_field :start_time, placeholder: "Start Time",:class => "field" %>
-
+    </div>
+  <div>
+    <%= label_tag 'I can help this amount of hours.'%><br>
     <%= f.number_field :duration, placeholder: "Duration", :class => "field"%>
-
+</div>
+  <div>
+    <%= label_tag 'I can handle this many kids.'%><br>
     <%= f.number_field :availability, placeholder: "#Children I can sit", :class => "field" %>
-
+</div>
     <%= f.submit "ADD", :class => "submit" %>
 
 <% end %>

@@ -65,7 +65,7 @@ class UsersController < ApplicationController
   def send_emergency
     texting = TwilioController.new
     texting.emergency
-    flash[:notice] = "Your emergency CALL was sent! RELAX!"
+    flash[:notice] = "Your CALL was sent! RELAX!"
     redirect_to users_path
   end
 
