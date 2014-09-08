@@ -1,11 +1,16 @@
 <%= form_tag(:action => 'search')   do  %>
-
+    <div>
+    <%= label_tag 'Date & time'%><br>
     <%= datetime_local_field_tag :start_time, placeholder: "start time", :class => "field" %>
-
-
+    </div>
+    <div>
+    <%= label_tag 'How many hours?' %><br>
     <%= number_field_tag :duration, placeholder: "Duration", :class => "field"  %>
-
+    </div>
+    <div>
+    <%= label_tag 'Just this amount of kids.' %><br>
     <%= number_field_tag :availability, placeholder: "#children", :class => "field"  %>
+    </div>
 
     <%= submit_tag "Submit", :class => "submit"  %>
 <% end %>
